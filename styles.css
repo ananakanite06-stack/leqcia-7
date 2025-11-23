@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background: #09001a;
+    font-family: Arial;
+}
+
+/* BACKGROUND */
+.space-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/mnt/data/Screenshot 2025-11-23 213657.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    animation: drift 25s linear infinite;
+}
+
+/* TITLE */
+.title {
+    font-size: 55px;
+    color: gold;
+    text-align: center;
+    margin-top: 20px;
+    animation: titleAnim 4s ease-in-out infinite;
+    text-shadow: 0 0 10px #ff0;
+    z-index: 99;
+}
+
+.title:hover {
+    transform: scale(1.2) rotate(-5deg);
+    transition: 1s;
+}
+
+/* CATS */
+.cat {
+    position: absolute;
+    width: 200px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.cat img { width: 100%; }
+
+.cat1 { left: 5%; top: 30%; animation-duration: 7s; }
+.cat2 { left: 70%; top: 20%; animation-duration: 6s; }
+.cat3 { left: 40%; top: 65%; animation-duration: 8s; }
+.cat4 { left: 20%; top: 75%; animation: spinCat 10s linear infinite; }
+
+/* UFO */
+.ufo {
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    background: silver;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation: ufoMove 6s infinite;
+    box-shadow: 0 0 15px #fff;
+}
+
+/* CLOUDS */
+.cloud {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: #fff;
+    border-radius: 80px;
+    filter: blur(4px);
+    opacity: 0.8;
+    animation: cloudMove 30s linear infinite;
+}
+
+.cloud1 { top: 10%; left: -200px; }
+.cloud2 { top: 60%; left: -300px; }
+
+/* ROTATING TEXT */
+.rotating {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: cyan;
+    animation: rotateText 6s infinite;
+}
+
+/* LOADER */
+.loader {
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+}
+
+.ball {
+    background-color: gray;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    margin: 0 10px;
+    display: inline-block;
+    animation: loader 0.8s infinite;
+}
+
+#second { animation-delay: 0.2s; }
+#third { animation-delay: 0.4s; }
+
+/* KEYFRAMES */
+@keyframes float {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-40px) rotate(8deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+}
+
+@keyframes spinCat {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(360deg) scale(1.1); }
+    100% { transform: rotate(720deg) scale(1); }
+}
+
+@keyframes cloudMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(1800px); }
+}
+
+@keyframes drift {
+    0% { transform: scale(1) translateX(0); }
+    100% { transform: scale(1.1) translateX(-80px); }
+}
+
+@keyframes ufoMove {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(120px, 40px) rotate(6deg); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes rotateText {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    50% { transform: translateX(-50%) rotate(360deg); }
+    100% { transform: translateX(-50%) rotate(720deg); }
+}
+
+@keyframes loader {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes titleAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
